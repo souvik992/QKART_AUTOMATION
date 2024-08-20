@@ -1,0 +1,37 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="E-commerce Application Suite">
+    <parameter name="TC1_Username" value="testUser" />
+    <parameter name="TC1_Password" value="abc@123" />
+    <listeners>
+        <listener class-name="QKART_TESTNG.ListenerClass"/>
+    </listeners>
+    <test name="Sanity Tests">
+        <parameter name="TC5_ProductNameToSearchFor" value="YONEX Smash Badminton Racquet" />
+        <parameter name="TC5_ProductNameToSearchFor2" value="Tan Leatherette Weekender Duffle" />
+        <parameter name="TC5_AddressDetails" value="Addr line 1 addr Line 2 addr line 3" />
+        <parameter name="TC7_ProductName" value="Stylecon 9 Seater RHS Sofa Set " />
+        <parameter name="TC7_Qty" value="60" />
+        <groups>
+            <run>
+                <include name="Sanity_test"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="QKART_TESTNG.QKART_Tests"/>
+        </classes>
+    </test>
+    
+    <test name="Regression Tests">
+        <parameter name="TC6_ProductNameToSearch1" value="Xtend Smart Watch" />
+        <parameter name="TC6_ProductNameToSearch2" value="Yarine Floor Lamp" />
+        <groups>
+            <run>
+                <include name="Regression_Test"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="QKART_TESTNG.QKART_Tests"/>
+        </classes>
+    </test>
+</suite>
+
